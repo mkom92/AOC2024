@@ -38,14 +38,15 @@ def star(star_2: bool, report: list, removed_levels = 0) -> bool:
 
 star_1, star_2 = 0, 0
 
-with open("input.txt", "r") as f:
+if __name__ == "__main__":
+    with open("input.txt", "r") as f:
 
-    for line in f.readlines():
+        for line in f.readlines():
 
-        report = [int(x) for x in line.split()]
+            report = [int(x) for x in line.split()]
 
-        star_1 += int(star(False, report))
-        star_2 += int(star(True, report))
+            star_1 += int(star(False, report))
+            star_2 += int(star(True, report))
 
-print(f"Star 1 : {star_1}")
-print(f"Star 2 : {star_2}")
+    print(f"Star 1 : {star_1}")
+    print(f"Star 2 : {star_2}")
